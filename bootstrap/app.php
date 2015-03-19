@@ -25,7 +25,9 @@ $app = new Illuminate\Foundation\Application(
 | incoming requests to this application from both the web and CLI.
 |
 */
+$app_class = __DIR__ . "/../app";
 
+ComposerAutoloaderInitComposerManager::getLoader()->addPsr4("App\\", $app_class);
 $app->singleton(
 	'Illuminate\Contracts\Http\Kernel',
 	'App\Http\Kernel'
